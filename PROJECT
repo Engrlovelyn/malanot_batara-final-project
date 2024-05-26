@@ -1,0 +1,139 @@
+<?php
+
+function Totalforce($mass,$acceleration){
+    $force=$mass*$acceleration;
+    echo"The total force is:" .$force;
+}
+
+function Totalvoltage($current,$resistance){
+    $voltage=$current*$resistance;
+    echo"The total voltage is:".$voltage;
+
+}
+
+function Totalvelocity($distance,$time){
+    $velocity=$distance/$time;
+    echo"The total velocity is:".$velocity; 
+}
+
+function Totalprojectilemotion($initialvelocity,$angle,$time){
+    $angleRad = deg2rad($angle);
+    $verticalcomponent = $initialvelocity*sin($angleRad);
+    $horizontalcomponent= $initialvelocity*cos($angleRad);
+    $verticaldisplacement = $verticalcomponent*time-0.5*9.8*$time*$time;
+    $horizontaldisplacement = $horizontalcomponent*$time;
+    return array($horizontalDisplacement, $verticalDisplacement);
+
+}
+
+function Totalcentripetalforce($mass,$velocity, $radius){
+    $centripetalforce =($mass*velocity*$velocity)/$radius;
+    echo"The total centripetal force is:".$centripetalforce;
+
+}
+
+function Totalelectricalpower($voltage,$current){
+    $electricalpower= $voltage*$current;
+    echo "The total electrical power is: ".$electricalpower;
+
+}
+
+function Totalpressure($force,$area){
+    $pressure=$force/$area;
+    echo"The total pressure is:".$pressure;
+}
+
+function Totalflowrate($volume,$time){
+    $flowrate=$volume/$time;
+    echo"The total flowrate is:". $flowrate;
+}
+
+function Totalkineticenergyrate($mass,$velocity){
+    $kineticenergyrate=0.5*$mass*$velocity*$velocity;
+    echo"The total kineticenergyrate is:". $kineticenergyrate;
+
+}
+
+function Totalgravitationalpotentialenergyrate($mass,$height){
+    $gravitationalpotentialenergyrate=$mass*$height;
+    echo"The total gravitationalenergyrate is:".$gravitationalenergyrate;
+
+}
+
+do{
+    echo"A. force";
+    echo"B.voltage";
+    echo"C. velocity";
+    echo"D. projectilemotion";
+    echo"E. centripetalforce";
+    echo"F. electricalpower";
+    echo"G. pressure";
+    echo"H. flowrate";
+    echo"I. kineticenergy";
+    echo"J. gravitationalpotentialenergyrate";
+
+    $choice=readline("enter your choice(A-J): ");
+
+    switch($choice){
+     case A:
+            $mass=readline("enter mass (kg):");
+            $acceleration=readline("enter acceleration(m/s^2):");
+            echo"The total force is:" .$force;
+            break;
+    case B:
+            $current=readline("enter current(A):");
+            $resistace=readline("$current,$resistance(ohm):");
+            echo"The total voltage is:".$voltage;
+            break;
+    case C:
+        $distance=readline("enter distance(m): ");
+        $time=readline("entertime(s): ");
+        echo"The total velocity is:".$velocity; 
+        break;
+    case D:
+        $initialvelocity=readline("enter initialvelocity(m/s): ");
+        $angle=readline("enter angfle(degrees): ");
+        $time=readline("enter time(s): ")
+        list($horizontaldisplacement, $verticaldisplacement)=Totalprojectilemotion($initialvelocity,$angle,$time);
+        echo"horizontaldislacement: $horizontaldisplacement m/n";
+        echo" Total verticaldisplacement is: $verticaldisplacement m/n";
+        break;
+    case E:
+        $mass=readline("enter mass(kg): ");
+        $velocity=readline("enter velocity(m/s): ");
+        $radius=readline("enter radius(m): ");
+        echo"The total centripetal force is:".$centripetalforce;
+        break;
+    case F:
+        $current=readline("enetr current(A): ");
+        $voltage=readline("enter voltage (V): ");
+        echo "The total electrical power is: ".$electricalpower;
+        break;
+    case G:
+        $force=readline("enter force(N): ");
+        $area=readline("enter area(m^n): ");
+        echo"The total pressure is:".$pressure;
+        break;
+    case H:
+        $volume=readline("enter volume (m^3): ");
+        $time=readline("enetr time(s): ");
+        echo"The total flowrate is:". $flowrate;
+        break;
+    case I:
+        $mass=readline("enter mass(kg): ");
+        $velocity=readline("enter velocity(m/s): ");
+        echo"The total kineticenergyrate is:". $kineticenergyrate;
+        break;
+    case J:
+        $mass=readline("enter mass(kg): ");
+        $height=readline("enetr height (m): ");
+        echo"The total gravitationalenergyrate is:".$gravitationalenergyrate;
+        break;
+        default:
+        echo "invalid choice";
+    }
+ $continue=readline("do you want to continue? (yes/no): ");
+ while($continue== 'yes');
+}
+
+?>
